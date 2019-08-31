@@ -10,9 +10,8 @@ public class gameover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        besttime = PlayerPrefs.GetInt("bestTime");
+        besttime = GameManager.besttime;
         bestT.text = "best time: " + besttime + " seconds";
-        PlayerPrefs.Save();
     }
     // Update is called once per frame
     void Update()

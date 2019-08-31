@@ -46,8 +46,11 @@ public class playerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(this.gameObject);
-            PlayerPrefs.SetInt("bestTime", (int)LevelController.timer);
+            SceneManager.LoadScene("GameOver");
+        }
+        if (collision.gameObject.CompareTag("Enemy") && (int)LevelController.timer > GameManager.besttime)
+        {
+            GameManager.besttime = (int)LevelController.timer;
             SceneManager.LoadScene("GameOver");
         }
         else
